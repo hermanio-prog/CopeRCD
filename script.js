@@ -1,4 +1,4 @@
-// Language switching functionality
+  // Language switching functionality
 document.querySelectorAll('.lang-btn').forEach(button => {
     button.addEventListener('click', function() {
         // Remove active class from all buttons
@@ -60,4 +60,4 @@ function updateTimer() {
 
 // Update timer every second
 setInterval(updateTimer, 1000);
-updateTimer(); // Initial call
+updateTimer(); // Initial call      
