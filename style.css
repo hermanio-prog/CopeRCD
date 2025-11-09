@@ -7,7 +7,7 @@
     --text-dark: #1F2937;
     --text-light: #6B7280;
     --bg-light: #F9FAFB;
-    --white: #FFFFFF;
+    --black: #FFFFFF;
     --gray: #E5E7EB;
     --success: #10B981;
 }
@@ -370,4 +370,4 @@ footer {
         width: 100%;
         max-width: 150px;
     }
-}      
+}
