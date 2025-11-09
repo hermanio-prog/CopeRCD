@@ -1,74 +1,282 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIP ACCESS - Conteúdo Exclusivo</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #7c002b; /* vinho escuro inspirado na imagem */
+            --secondary: #111111;
+            --text-light: #ffffff;
+            --text-dark: #222222;
+            --gray: #cccccc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary);
+            color: var(--text-light);
+        }
+
+        header {
+            background: var(--primary);
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo span {
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .language-selector button {
+            background: transparent;
+            border: 2px solid var(--text-light);
+            color: var(--text-light);
+            padding: 0.4rem 0.8rem;
+            margin-left: 5px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .language-selector .active {
+            background: var(--text-light);
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(124,0,43,0.8)), url('hero-bg.jpg') center/cover;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .offer-card {
+            background: #1a1a1a;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: inline-block;
+        }
+
+        .offer-title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .offer-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .features li {
+            list-style: none;
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .feature-icon {
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--text-light);
+            padding: 0.9rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #9b0038;
+        }
+
+        .guarantee {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 1rem;
+        }
+
+        .timer-section {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: #0e0e0e;
+        }
+
+        .timer-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .timer-item {
+            background: #1a1a1a;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .timer-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .testimonials {
+            background: var(--secondary);
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .testimonial-card {
+            background: #1a1a1a;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+        }
+
+        .testimonial-text {
+            color: var(--gray);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .testimonial-author {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        footer {
+            background: var(--primary);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .copyright, .warning {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="logo-icon">🔒</span>
-                    <span class="pt">ACESSO VIP</span>
-                    <span class="en" style="display: none;">VIP ACCESS</span>
-                </div>
-                <div class="language-selector">
-                    <button class="lang-btn active" data-lang="pt">PT</button>
-                    <button class="lang-btn" data-lang="en">EN</button>
-                </div>
+        <div class="container header-content">
+            <div class="logo"><span>🔒 ACESSO VIP</span></div>
+            <div class="language-selector">
+                <button class="lang-btn active">PT</button>
+                <button class="lang-btn">EN</button>
             </div>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1 class="pt">CONTEÚDO EXCLUSIVO ADULTO</h1>
-            <h1 class="en" style="display: none;">EXCLUSIVE ADULT CONTENT</h1>
-            <p class="pt">Acesso vitalício a conteúdo premium atualizado semanalmente</p>
-            <p class="en" style="display: none;">Lifetime access to premium content updated weekly</p>
-            
+            <h1>CONTEÚDO EXCLUSIVO ADULTO</h1>
+            <p>Acesso vitalício a conteúdo premium atualizado semanalmente</p>
+
             <div class="offer-card">
-                <h2 class="offer-title pt">OFERTA POR TEMPO LIMITADO</h2>
-                <h2 class="offer-title en" style="display: none;">LIMITED TIME OFFER</h2>
+                <h2 class="offer-title">OFERTA POR TEMPO LIMITADO</h2>
                 <div class="offer-price">R$ 47,00</div>
                 <ul class="features">
-                    <li><span class="feature-icon">✓</span> <span class="pt">Acesso vitalício</span><span class="en" style="display: none;">Lifetime access</span></li>
-                    <li><span class="feature-icon">✓</span> <span class="pt">Conteúdo exclusivo</span><span class="en" style="display: none;">Exclusive content</span></li>
-                    <li><span class="feature-icon">✓</span> <span class="pt">Atualizações semanais</span><span class="en" style="display: none;">Weekly updates</span></li>
-                    <li><span class="feature-icon">✓</span> <span class="pt">Suporte prioritário</span><span class="en" style="display: none;">Priority support</span></li>
-                    <li><span class="feature-icon">✓</span> <span class="pt">Acesso em todos os dispositivos</span><span class="en" style="display: none;">Access on all devices</span></li>
+                    <li><span class="feature-icon">✓</span> Acesso vitalício</li>
+                    <li><span class="feature-icon">✓</span> Conteúdo exclusivo</li>
+                    <li><span class="feature-icon">✓</span> Atualizações semanais</li>
+                    <li><span class="feature-icon">✓</span> Suporte prioritário</li>
+                    <li><span class="feature-icon">✓</span> Acesso em todos os dispositivos</li>
                 </ul>
-                <a href="#" class="cta-button pt">OBTER ACESSO VIP AGORA</a>
-                <a href="#" class="cta-button en" style="display: none;">GET VIP ACCESS NOW</a>
-                <p class="guarantee pt">Garantia de 7 dias ou seu dinheiro de volta!</p>
-                <p class="guarantee en" style="display: none;">7-day money back guarantee!</p>
+                <a href="#" class="cta-button">OBTER ACESSO VIP AGORA</a>
+                <p class="guarantee">Garantia de 7 dias ou seu dinheiro de volta!</p>
             </div>
         </div>
     </section>
 
     <section class="timer-section">
         <div class="container">
-            <h2 class="timer-title pt">OFERTA TERMINA EM:</h2>
-            <h2 class="timer-title en" style="display: none;">OFFER ENDS IN:</h2>
+            <h2 class="timer-title">OFERTA TERMINA EM:</h2>
             <div class="timer">
                 <div class="timer-item">
-                    <div class="timer-value" id="hours">18</div>
-                    <div class="timer-label pt">HORAS</div>
-                    <div class="timer-label en" style="display: none;">HOURS</div>
+                    <div class="timer-value">18</div>
+                    <div class="timer-label">HORAS</div>
                 </div>
                 <div class="timer-item">
-                    <div class="timer-value" id="minutes">23</div>
-                    <div class="timer-label pt">MINUTOS</div>
-                    <div class="timer-label en" style="display: none;">MINUTES</div>
+                    <div class="timer-value">23</div>
+                    <div class="timer-label">MINUTOS</div>
                 </div>
                 <div class="timer-item">
-                    <div class="timer-value" id="seconds">59</div>
-                    <div class="timer-label pt">SEGUNDOS</div>
-                    <div class="timer-label en" style="display: none;">SECONDS</div>
+                    <div class="timer-value">59</div>
+                    <div class="timer-label">SEGUNDOS</div>
                 </div>
             </div>
         </div>
@@ -76,22 +284,18 @@
 
     <section class="testimonials">
         <div class="container">
-            <h2 class="section-title pt">O QUE NOSSOS CLIENTES DIZEM</h2>
-            <h2 class="section-title en" style="display: none;">WHAT OUR CUSTOMERS SAY</h2>
+            <h2 class="section-title">O QUE NOSSOS CLIENTES DIZEM</h2>
             <div class="testimonial-grid">
                 <div class="testimonial-card">
-                    <p class="testimonial-text pt">"Conteúdo de alta qualidade e atualizado regularmente. Vale cada centavo!"</p>
-                    <p class="testimonial-text en" style="display: none;">"High quality content and regularly updated. Worth every penny!"</p>
+                    <p class="testimonial-text">"Conteúdo de alta qualidade e atualizado regularmente. Vale cada centavo!"</p>
                     <p class="testimonial-author">- João S.</p>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-text pt">"Finalmente encontrei um serviço que entrega o que promete. O suporte é excelente!"</p>
-                    <p class="testimonial-text en" style="display: none;">"Finally found a service that delivers what it promises. The support is excellent!"</p>
+                    <p class="testimonial-text">"Finalmente encontrei um serviço que entrega o que promete. O suporte é excelente!"</p>
                     <p class="testimonial-author">- Maria L.</p>
                 </div>
                 <div class="testimonial-card">
-                    <p class="testimonial-text pt">"Melhor investimento que fiz em conteúdo premium. Recomendo para todos!"</p>
-                    <p class="testimonial-text en" style="display: none;">"Best investment I've made in premium content. I recommend it to everyone!"</p>
+                    <p class="testimonial-text">"Melhor investimento que fiz em conteúdo premium. Recomendo para todos!"</p>
                     <p class="testimonial-author">- Carlos M.</p>
                 </div>
             </div>
@@ -100,23 +304,16 @@
 
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="#" class="pt">Termos de Uso</a>
-                    <a href="#" class="en" style="display: none;">Terms of Use</a>
-                    <a href="#" class="pt">Política de Privacidade</a>
-                    <a href="#" class="en" style="display: none;">Privacy Policy</a>
-                    <a href="#" class="pt">Suporte</a>
-                    <a href="#" class="en" style="display: none;">Support</a>
-                </div>
-                <p class="copyright pt">© 2023 Acesso VIP. Todos os direitos reservados.</p>
-                <p class="copyright en" style="display: none;">© 2023 VIP Access. All rights reserved.</p>
-                <p class="warning pt">Este site é destinado exclusivamente a maiores de 18 anos.</p>
-                <p class="warning en" style="display: none;">This site is intended for adults 18 years and older.</p>
+            <div class="footer-links">
+                <a href="#">Termos de Uso</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Suporte</a>
             </div>
+            <p class="copyright">© 2025 Acesso VIP. Todos os direitos reservados.</p>
+            <p class="warning">Este site é destinado exclusivamente a maiores de 18 anos.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
+           
