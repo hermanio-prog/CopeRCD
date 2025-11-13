@@ -1,459 +1,206 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Melissa Santiago — Exclusive Content</title>
-
-  <!-- Poppins font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melissa Santiago | Exclusive Content</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --bg:#0b0b0b;
-      --card:#111111;
-      --accent:#ff6a1a; /* orange */
-      --accent-2:#ff3b00;
-      --muted:#b9b9b9;
-      --glass: rgba(255,255,255,0.03);
-      --radius:18px;
-      --poppins: 'Poppins', sans-serif;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:var(--poppins);
-      background:linear-gradient(180deg,#070707 0%, #0f0f0f 100%);
-      color:#fff;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.4;
+    body {
+      background: linear-gradient(180deg, #000, #111);
+      color: #fff;
+      overflow-x: hidden;
     }
 
-    /* container */
-    .wrap{max-width:1200px;margin:0 auto;padding:28px;}
-
-    /* HERO */
-    .hero{
-      display:flex;
-      gap:28px;
-      align-items:center;
-      padding:32px;
-      background:linear-gradient(180deg, rgba(255,90,30,0.04), transparent);
-      border-radius:18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      overflow:hidden;
-      position:relative;
-    }
-    .hero-left{flex:1; padding:18px 24px}
-    .hero-right{width:420px; max-width:40%; position:relative; display:flex;align-items:center;justify-content:center}
-
-    .badge{
-      display:inline-block;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
-      padding:6px 12px;
-      border-radius:999px;
-      font-weight:600;
-      font-size:13px;
-      color:#fff;
-      margin-bottom:14px;
-      box-shadow:0 6px 20px rgba(255,80,30,0.12);
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(90deg, #000, #111);
+      position: relative;
     }
 
-    h1{
-      margin:0 0 12px;
-      font-size:34px;
-      line-height:1.05;
-      font-weight:800;
-      letter-spacing:-0.6px;
-      color:#fff;
-    }
-    .h1-highlight{color:var(--accent-2)}
-    p.lead{
-      margin:0 0 20px;
-      color:var(--muted);
-      font-size:15px;
-      max-width:62ch;
+    header img {
+      width: 280px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(255, 90, 0, 0.4);
+      margin-bottom: 25px;
     }
 
-    .cta-row{display:flex;gap:12px;align-items:center}
-    .btn{
-      border:0;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
-      color:#fff;
-      padding:14px 20px;
-      border-radius:12px;
-      font-weight:700;
-      cursor:pointer;
-      box-shadow:0 12px 30px rgba(255,90,30,0.12);
-      text-decoration:none;
-    }
-    .btn.ghost{
-      background:transparent;
-      border:1px solid rgba(255,255,255,0.06);
-      color:#fff;
-      padding:12px 18px;
-      font-weight:600;
+    h1 {
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 10px;
     }
 
-    /* promo strip */
-    .promo-strip{
-      margin-top:18px;
-      display:flex;
-      align-items:center;
-      gap:14px;
-      background:linear-gradient(90deg, rgba(255,90,30,0.03), transparent);
-      padding:10px;
-      border-radius:12px;
-    }
-    .countdown{
-      background:linear-gradient(180deg, rgba(17,17,17,0.9), rgba(255,255,255,0.02));
-      padding:8px 12px;
-      border-radius:10px;
-      font-weight:700;
-      display:flex;
-      gap:8px;
-      align-items:center;
-    }
-    .countdown span{min-width:46px; text-align:center; font-size:14px}
-
-    /* hero model image */
-    .model-frame{
-      width:100%;
-      height:520px;
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
-      background:linear-gradient(180deg, rgba(255,90,30,0.02), transparent);
-      display:flex;
-      align-items:flex-end;
-      justify-content:flex-start;
-    }
-    .model-frame img{width:100%; height:100%; object-fit:cover; display:block; transform:translateY(10px); transition:transform .8s ease}
-    .model-frame:hover img{transform:translateY(0px) scale(1.02)}
-
-    /* features / phone card */
-    .features{
-      margin-top:34px;
-      display:grid;
-      grid-template-columns:1fr 440px;
-      gap:28px;
-      align-items:start;
+    h1 span {
+      color: #ff6a00;
     }
 
-    .card{
-      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
-      border-radius:18px;
-      padding:22px;
-      box-shadow:0 8px 30px rgba(0,0,0,0.6);
+    p.subtitle {
+      color: #ccc;
+      font-size: 1rem;
+      max-width: 600px;
+      margin-bottom: 30px;
     }
 
-    .phone-visual{
-      width:100%;
-      height:360px;
-      border-radius:14px;
-      overflow:hidden;
-      position:relative;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:linear-gradient(180deg,#000,#0b0b0b);
-    }
-    .phone-visual img{max-width:90%; height:auto; display:block; transform:translateY(6px); transition:transform .6s ease}
-    .phone-visual:hover img{transform:translateY(0) scale(1.03)}
-
-    .feature-list{list-style:none;padding:0;margin:12px 0 0;color:var(--muted)}
-    .feature-list li{padding:8px 0; display:flex; gap:10px; align-items:center; font-size:15px}
-    .feature-list li::before{
-      content:'✓';
-      color:var(--accent-2);
-      font-weight:700;
-      display:inline-block;
-      min-width:20px;
+    .btn {
+      background: linear-gradient(90deg, #ff6a00, #ff4500);
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      padding: 15px 35px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(255, 80, 0, 0.4);
     }
 
-    /* prices */
-    .pricing{
-      margin-top:28px;
-      display:flex;
-      gap:14px;
-      justify-content:flex-start;
-      flex-wrap:wrap;
-    }
-    .plan{
-      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      border-radius:14px;
-      padding:18px;
-      width:220px;
-      min-height:150px;
-      display:flex;
-      flex-direction:column;
-      justify-content:space-between;
-      box-shadow:0 8px 30px rgba(0,0,0,0.6);
-      transition:transform .25s ease, box-shadow .25s ease;
-    }
-    .plan:hover{transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,0.7)}
-    .plan .title{font-weight:800; font-size:16px}
-    .plan .price{font-weight:900; font-size:22px; margin-top:6px; color:var(--accent-2)}
-    .plan .desc{font-size:13px; color:var(--muted); margin-top:8px}
-
-    /* footer / trust */
-    .trust{
-      margin-top:34px;
-      background:linear-gradient(90deg, rgba(255,255,255,0.01), transparent);
-      padding:16px;
-      border-radius:12px;
-      display:flex;
-      gap:18px;
-      align-items:center;
-      justify-content:space-between;
-      color:var(--muted);
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 100, 0, 0.6);
     }
 
-    /* responsive */
-    @media (max-width:980px){
-      .hero{flex-direction:column}
-      .hero-right{width:100%; max-width:100%}
-      .features{grid-template-columns:1fr; padding-bottom:28px}
-      .model-frame{height:380px}
-      .phone-visual{height:300px}
+    section {
+      padding: 60px 20px;
+      text-align: center;
     }
-    @media (max-width:520px){
-      h1{font-size:24px}
-      .model-frame{height:300px}
-      .plan{width:48%}
+
+    .prices {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .price-card {
+      background: #111;
+      border: 1px solid #ff6a00;
+      border-radius: 15px;
+      padding: 25px;
+      width: 280px;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(255, 80, 0, 0.2);
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(255, 80, 0, 0.4);
+    }
+
+    .price-card h3 {
+      color: #ff6a00;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .price-card p {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      background: #000;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Temporizador */
+    .timer {
+      margin-top: 25px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ff6a00;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      header img {
+        width: 90%;
+      }
+      .price-card {
+        width: 90%;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <!-- HERO -->
-    <section class="hero" aria-label="Hero promotion">
-      <div class="hero-left">
-        <div class="badge">LIMITED TIME OFFER</div>
-        <h1>Learn the intimate secrets & exclusive routines of <span class="h1-highlight">Melissa Santiago</span></h1>
-        <p class="lead">Exclusive adult content updated weekly. Private shows, behind-the-scenes, personalized clips and VIP access — join now while the special launch price lasts.</p>
+  <header>
+    <!-- Aqui está a imagem que você pediu -->
+    <img src="pt.jpg" alt="modelo Melissa Santiago">
 
-        <div class="cta-row">
-          <!-- whatsapp link templates created in script -->
-          <a id="buy-btn" class="btn" href="#" target="_blank" rel="noopener">Buy Now on WhatsApp</a>
-          <a class="btn ghost" href="#pricing">See plans</a>
-        </div>
+    <h1>Discover <span>Melissa Santiago’s</span> Exclusive World 🔥</h1>
+    <p class="subtitle">
+      Unlock her secret content — available for a limited time only. Don’t miss this exclusive experience.
+    </p>
 
-        <div class="promo-strip" style="margin-top:18px;">
-          <div style="font-size:13px;color:var(--muted)">Hurry — promotion ends in</div>
-          <div class="countdown" id="countdown">
-            <span id="cd-days">00d</span>
-            <span id="cd-hours">00h</span>
-            <span id="cd-mins">00m</span>
-            <span id="cd-secs">00s</span>
-          </div>
-          <div style="margin-left:auto;color:var(--muted);font-size:13px">Secure payments via WhatsApp (PayPal/Binance coming)</div>
-        </div>
+    <button class="btn" onclick="window.location.href='https://wa.me/855943975'">
+      Get Access Now
+    </button>
+
+    <div class="timer" id="timer">Offer ends in: 00:00:00</div>
+  </header>
+
+  <section>
+    <h2>🔥 Choose Your Exclusive Access</h2>
+
+    <div class="prices">
+      <div class="price-card">
+        <h3>$9.99</h3>
+        <p>Basic Access — discover private images & sneak peeks.</p>
+        <button class="btn" onclick="window.location.href='https://wa.me/855943975'">Buy Now</button>
       </div>
 
-      <div class="hero-right">
-        <div class="model-frame card" role="img" aria-label="Model image">
-          <!-- Replace model.jpg with your model image (recommended size 1600x1200). -->
-          <img id="model-image" src="model.jpg" alt="Model photo (replace model.jpg)">
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="features" aria-label="Features and phone">
-      <div class="card">
-        <h3 style="margin:0 0 8px">Sell Every Day — VIP Methods</h3>
-        <p style="margin:0 0 12px;color:var(--muted)">Tried-and-true funnels, private messaging, and content tiers designed to maximize conversions while keeping your clients returning for more.</p>
-
-        <ul class="feature-list">
-          <li>Advanced dashboard & private updates</li>
-          <li>Easy-to-download exclusive clips</li>
-          <li>Personalized messages (VIP)</li>
-          <li>Secure ordering through WhatsApp</li>
-          <li>7-day guarantee on downloads</li>
-        </ul>
-
-        <!-- Pricing -->
-        <div class="pricing" id="pricing" style="margin-top:18px">
-          <div class="plan">
-            <div>
-              <div class="title">Starter Access</div>
-              <div class="price" data-price="9.99">$9.99</div>
-              <div class="desc">One exclusive clip + weekly photo pack</div>
-            </div>
-            <div style="margin-top:12px">
-              <a class="btn" href="#" data-plan="Starter" data-price="9.99">Buy via WhatsApp</a>
-            </div>
-          </div>
-
-          <div class="plan">
-            <div>
-              <div class="title">Popular Pack</div>
-              <div class="price" data-price="23.99">$23.99</div>
-              <div class="desc">3 clips + 2 private messages</div>
-            </div>
-            <div style="margin-top:12px">
-              <a class="btn" href="#" data-plan="Popular" data-price="23.99">Buy via WhatsApp</a>
-            </div>
-          </div>
-
-          <div class="plan">
-            <div>
-              <div class="title">VIP Monthly</div>
-              <div class="price" data-price="47.00">$47.00</div>
-              <div class="desc">Full weekly access + VIP chat</div>
-            </div>
-            <div style="margin-top:12px">
-              <a class="btn" href="#" data-plan="VIP" data-price="47.00">Buy via WhatsApp</a>
-            </div>
-          </div>
-        </div>
-
+      <div class="price-card">
+        <h3>$23.99</h3>
+        <p>Premium Access — includes videos, photos & direct updates.</p>
+        <button class="btn" onclick="window.location.href='https://wa.me/855943975'">Buy Now</button>
       </div>
 
-      <!-- phone visual -->
-      <div class="card" style="display:flex;flex-direction:column;gap:16px">
-        <div class="phone-visual" aria-hidden="true">
-          <!-- Replace phone.jpg with your phone mockup image -->
-          <img id="phone-image" src="phone.jpg" alt="Phone preview (replace phone.jpg)">
-        </div>
-
-        <div style="display:flex;flex-direction:column;gap:8px">
-          <div style="font-weight:700">How to purchase</div>
-          <div style="color:var(--muted);font-size:14px">
-            1) Click Buy -> opens WhatsApp with a prepared message.<br>
-            2) Confirm which plan you want and preferred payment method (PayPal/Binance will be available soon).<br>
-            3) Receive your private content link after payment confirmation.
-          </div>
-
-          <div style="display:flex;gap:8px;margin-top:12px">
-            <a id="msg-paypal" class="btn ghost" href="#" target="_blank">PayPal Message</a>
-            <a id="msg-binance" class="btn ghost" href="#" target="_blank">Binance Message</a>
-          </div>
-        </div>
+      <div class="price-card">
+        <h3>$47.00</h3>
+        <p>VIP Access — all exclusive drops, private lives & early releases.</p>
+        <button class="btn" onclick="window.location.href='https://wa.me/855943975'">Buy Now</button>
       </div>
-    </section>
-
-    <div class="trust">
-      <div>✅ Secure ordering via WhatsApp • 24/7 VIP support</div>
-      <div style="color:var(--muted)">Questions? <a href="https://wa.me/855943975?text=Hi%20Melissa%2C%20I%20have%20a%20question." target="_blank" style="color:var(--accent-2);text-decoration:none">Contact on WhatsApp</a></div>
     </div>
+  </section>
 
-    <div style="height:28px"></div>
-  </div>
+  <footer>
+    © 2025 Melissa Santiago | All rights reserved.
+  </footer>
 
   <script>
-    /***********************
-      Configuration notes:
-      - Replace "model.jpg" and "phone.jpg" with your images (in same folder).
-      - To change the promo countdown, update promoSeconds below.
-        promoSeconds is the number of seconds remaining from now.
-    ***********************/
+    // Temporizador de contagem decrescente (por exemplo, 10 minutos)
+    const countdown = 10 * 60; 
+    let timeLeft = countdown;
+    const timerDisplay = document.getElementById("timer");
 
-    // ====== SETTINGS ======
-    const whatsappNumber = "855943975"; // as provided
-    // Default promo length (e.g., 72 hours = 72*3600). Change below:
-    const promoSeconds = 72 * 3600; // default 72 hours. EDIT this number to change timer.
-
-    // Pricing (if you want to change prices programmatically)
-    const plans = {
-      "Starter": {price: "9.99", label: "Starter Access"},
-      "Popular": {price: "23.99", label: "Popular Pack"},
-      "VIP": {price: "47.00", label: "VIP Monthly"}
-    };
-
-    // ====== COUNTDOWN ======
-    (function countdownInit(){
-      // target timestamp = now + promoSeconds
-      const target = Date.now() + (promoSeconds * 1000);
-      const d = document;
-      const daysEl = d.getElementById('cd-days');
-      const hoursEl = d.getElementById('cd-hours');
-      const minsEl = d.getElementById('cd-mins');
-      const secsEl = d.getElementById('cd-secs');
-
-      function update(){
-        const diff = Math.max(0, target - Date.now());
-        const s = Math.floor(diff / 1000);
-        const days = Math.floor(s / 86400);
-        const hours = Math.floor((s % 86400) / 3600);
-        const mins = Math.floor((s % 3600) / 60);
-        const secs = Math.floor(s % 60);
-        daysEl.textContent = String(days).padStart(2,'0') + 'd';
-        hoursEl.textContent = String(hours).padStart(2,'0') + 'h';
-        minsEl.textContent = String(mins).padStart(2,'0') + 'm';
-        secsEl.textContent = String(secs).padStart(2,'0') + 's';
-
-        if(diff <= 0){
-          clearInterval(timer);
-          // When promo ends, you can change UI here:
-          daysEl.textContent = "00d";
-          hoursEl.textContent = "00h";
-          minsEl.textContent = "00m";
-          secsEl.textContent = "00s";
-        }
-      }
-      update();
-      const timer = setInterval(update, 1000);
-    })();
-
-    // ====== WHATSAPP MESSAGES (templates) ======
-    // We will create messages for each plan. You can edit text here.
-    function whatsappLink(message){
-      const encoded = encodeURIComponent(message);
-      return `https://wa.me/${whatsappNumber}?text=${encoded}`;
+    function updateTimer() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      timerDisplay.textContent = `Offer ends in: ${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+      if (timeLeft > 0) timeLeft--;
+      else timerDisplay.textContent = "Offer expired!";
     }
 
-    // Prepare messages
-    const baseIntro = "Hi Melissa! I want to purchase";
-    // Templates for PayPal and Binance (user said they'll review PayPal/Binance later)
-    const templates = {
-      "Starter": `${baseIntro} Starter Access - $9.99. Please send payment instructions (PayPal or Binance). My WhatsApp: (please confirm).`,
-      "Popular": `${baseIntro} Popular Pack - $23.99. Please send payment instructions (PayPal or Binance).`,
-      "VIP": `${baseIntro} VIP Monthly - $47.00. I'm ready to pay — please send payment link and confirm.`,
-      "paypal": `Hi Melissa! I'm ready to pay via PayPal. Please send your PayPal email and amount.`,
-      "binance": `Hi Melissa! I'm ready to pay via Binance. Please send your Binance/P2P details and amount.`
-    };
-
-    // Hook up Buy buttons on the page
-    document.querySelectorAll('[data-plan]').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        e.preventDefault();
-        const plan = a.getAttribute('data-plan');
-        const msg = templates[plan] || `${baseIntro} ${plan}`;
-        window.open(whatsappLink(msg), '_blank');
-      });
-    });
-
-    // Main hero buy button uses the popular pack by default
-    document.getElementById('buy-btn').addEventListener('click', function(e){
-      e.preventDefault();
-      window.open(whatsappLink(templates['Popular']), '_blank');
-    });
-
-    // PayPal and Binance quick message links
-    document.getElementById('msg-paypal').href = whatsappLink(templates['paypal']);
-    document.getElementById('msg-binance').href = whatsappLink(templates['binance']);
-
-    // Accessibility: if user doesn't have images yet, show subtle placeholder background
-    document.getElementById('model-image').addEventListener('error', function(){
-      this.style.display = 'none';
-      const p = this.parentElement;
-      p.style.background = 'linear-gradient(180deg, rgba(255,90,30,0.06), rgba(255,255,255,0.02))';
-      p.innerHTML = '<div style="padding:24px;color:var(--muted);font-weight:700">Replace model.jpg with your model image</div>';
-    });
-    document.getElementById('phone-image').addEventListener('error', function(){
-      this.style.display = 'none';
-      const p = this.parentElement;
-      p.style.background = 'linear-gradient(180deg, rgba(255,90,30,0.03), transparent)';
-      p.innerHTML = '<div style="padding:24px;color:var(--muted);font-weight:700">Replace phone.jpg with your phone mockup</div>';
-    });
-
-    // NOTE: If you want the countdown to use a fixed clock date instead of seconds from now,
-    // replace the countdown initialization above with a timestamp (Date.parse("2025-11-20T18:00:00Z")).
+    setInterval(updateTimer, 1000);
   </script>
 </body>
 </html>
